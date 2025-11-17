@@ -1,7 +1,8 @@
-[{
-    "status":{
-        "message":"Api integrated Successfully"
+{
+  "statusObject": {
+    "status": {
+      "message": "Api integrated Successfully"
     }
-
-}]
+  }
+}
 
