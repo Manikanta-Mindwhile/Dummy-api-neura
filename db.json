@@ -1,10 +1,9 @@
 {
- 
-    "status": {
-      "message": "Api integrated Successfully"
-    },
- 
- "dummyMessages": [
+  "status": {
+    "message": "Api integrated Successfully"
+  },
+
+  "dummyMessages": [
     {
       "role": "user",
       "message": "Hi Neura!"
@@ -29,12 +28,12 @@
       "role": "ai",
       "message": "Glad you liked it!"
     }
+  ],
+
+  "ai": [
+    {
+      "id": 1,
+      "message": "This is a sample AI reply."
+    }
   ]
-  
 }
-
-
-
-
-
-
