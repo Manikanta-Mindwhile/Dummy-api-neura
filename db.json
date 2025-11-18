@@ -1,39 +1,24 @@
 {
-  "status": {
+  "status": [{
     "message": "Api integrated Successfully"
-  },
+  }],
 
-  "dummyMessages": [
+  "messages": [
     {
-      "role": "user",
-      "message": "Hi Neura!"
+      "sender": "AI",
+      "text": "Hello! I am Neura, your AI assistant. How can I help you today?",
+      "timestamp": "2025-11-18T10:00:00Z"
     },
     {
-      "role": "ai",
-      "message": "Hello! How can I assist you today?"
+      "sender": "User",
+      "text": "Hi Neura! Can you tell me a joke?",
+      "timestamp": "2025-11-18T10:01:00Z"
     },
     {
-      "role": "user",
-      "message": "Tell me a joke."
-    },
-    {
-      "role": "ai",
-      "message": "Sure! Why did the programmer quit his job? Because he didn't get arrays!"
-    },
-    {
-      "role": "user",
-      "message": "Haha good one!"
-    },
-    {
-      "role": "ai",
-      "message": "Glad you liked it!"
-    }
-  ],
-
-  "ai": [
-    {
-      "id": 1,
-      "message": "This is a sample AI reply."
+      "sender": "AI",
+      "text": "Sure! Why did the computer show up at work late? Because it had a hard drive!",
+      "timestamp": "2025-11-18T10:02:00Z"
     }
   ]
 }
+
