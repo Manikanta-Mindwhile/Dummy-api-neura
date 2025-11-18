@@ -3,8 +3,36 @@
     "status":[ {
       "message": "Api integrated Successfully"
     }]
+ 
+ "dummyMessages": [
+    {
+      "role": "user",
+      "message": "Hi Neura!"
+    },
+    {
+      "role": "ai",
+      "message": "Hello! How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "message": "Tell me a joke."
+    },
+    {
+      "role": "ai",
+      "message": "Sure! Why did the programmer quit his job? Because he didn't get arrays!"
+    },
+    {
+      "role": "user",
+      "message": "Haha good one!"
+    },
+    {
+      "role": "ai",
+      "message": "Glad you liked it!"
+    }
+  ]
   
 }
+
 
 
 
