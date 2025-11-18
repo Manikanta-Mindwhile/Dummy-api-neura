@@ -1,8 +1,8 @@
 {
  
-    "status":[ {
+    "status": {
       "message": "Api integrated Successfully"
-    }],
+    },
  
  "dummyMessages": [
     {
@@ -32,6 +32,7 @@
   ]
   
 }
+
 
 
 
