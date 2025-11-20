@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .chat-main {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 50px;
+    height: 80vh;
+     margin-top: 60px;
+    
+}
+@media (max-width: 768px) {
+    .chat-main {
+     gap: 10px;}
+    }
+
+/* LEFT PANEL */
+.left-panel {
+    width: 25%;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    height: 75vh;
+    overflow-y: auto;
+}
+@media (max-width: 768px) {
+    .left-panel {
+        width: 15%;
+    }}
+     
+
+.left-panel h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-panel ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #efefef;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.left-panel ul li:hover {
+    background: #dcdcdc;
+}
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url("images/bg-image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;   
+}
+
+.chat-container {
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    overflow: hidden;
+}
+
+/* chat-history fixes */
+.chat-history {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+/* input section */
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+
+.chat-history p {
+    margin: 5px 0;
+}
+
+
+.chat-input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white; text-align: center;" >Neura Talk</h1>
+    </header>
+    <div class="chat-main">
+
+        <!-- 🔹 LEFT PANEL -->
+        <div class="left-panel card">
+            <h3>Chat History</h3>
+            <ul id="chatList">
+                <li>Chat 1...</li>
+                <li>Chat 2...</li>
+                <li>Chat 3...</li>
+            </ul>
+        </div>
+
+        <!-- 🔹 RIGHT PANEL (Your existing chat UI) -->
+        <div class="chat-container">
+            <div class="card chat-history">
+            </div>
+            <div class="card chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const chatHistory = document.querySelector('.chat-history');
+const chatInput = document.querySelector('.chat-input input');
+const sendButton = document.querySelector('.chat-input button');
+
+// Load dummy messages first
+async function loadDummyMessages() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Manikanta-Mindwhile/Dummy-api-neura/main/db.json');
+        const data = await response.json();
+        data.messages.forEach(msg => addMessage(msg.sender, msg.text));
+    } catch (error) {
+        console.error("Failed to load dummy messages:", error);
+    }
+}
+
+// Function to add message to chat
+function addMessage(sender, text) {
+    chatHistory.innerHTML += `<p><strong>${sender}:</strong> ${text}</p>`;
+    chatHistory.scrollTop = chatHistory.scrollHeight; // auto-scroll
+}
+
+// Send new message
+sendButton.addEventListener('click', async () => {
+    const userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    // Show user message
+    addMessage('User', userMessage);
+    chatInput.value = '';
+
+    // Simulate AI response (replace with API later)
+    setTimeout(() => {
+        addMessage('AI', "This is a dummy AI response to: " + userMessage);
+    }, 1000);
+});
+
+// Enter key sends message
+chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendButton.click();
+});
+
+// Initialize chat
+loadDummyMessages();
+
+    </script>
+</body>
+</html>
